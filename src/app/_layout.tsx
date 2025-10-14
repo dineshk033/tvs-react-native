@@ -7,9 +7,21 @@ import { AuthProvider } from "@/context/AuthContext";
 export default function RootLayout() {
   return (
     <SafeAreaProvider>
-      <SafeAreaView className="flex-1">
-        <Slot />
-      </SafeAreaView>
+      <Stack initialRouteName="(store)/index">
+        <Stack.Screen
+          name="(store)/index"
+          options={{ headerShown: false }}
+          // options={{
+          //   headerShown: true,
+          //   headerBackground: () => (
+          //     <View className="flex-1 bg-blue-500"></View>
+          //   ),
+          // }}
+        />
+        <Stack.Screen name="cart" />
+        <Stack.Screen name="(auth)/login" />
+        <Stack.Screen name="(auth)/register" />
+      </Stack>
     </SafeAreaProvider>
   );
 }
