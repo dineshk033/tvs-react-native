@@ -1,5 +1,6 @@
 import { ProductModel } from "@/types/ProductModel";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { router } from "expo-router";
 import React from "react";
 import { Image, Pressable, Text, View } from "react-native";
 
@@ -8,7 +9,7 @@ export default function ProductCard({ product }: { product: ProductModel }) {
     product.price - (product.price * product.discountPercentage) / 100;
   return (
     <View className="bg-white rounded-xl shadow-md p-4 mb-3">
-      <Pressable onPress={() => {}}>
+      <Pressable onPress={() => router.push(`/(store)/product/${product.id}`)}>
         <Image
           source={{
             uri: product.thumbnail,
@@ -35,7 +36,7 @@ export default function ProductCard({ product }: { product: ProductModel }) {
         <Pressable
           className="p-2 flex-row items-center gap-3 bg-blue-600 rounded-xl text-white"
           hitSlop={10}
-          onPress={() => {}}
+          onPress={() => router.push(`/(store)/product/${product.id}`)}
         >
           <Ionicons name="cart-outline" size={22} color="#fff" />
           <Text className="text-white font-medium text-sm ml-3">

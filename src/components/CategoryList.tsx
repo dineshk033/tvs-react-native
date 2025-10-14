@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import React, { useState } from "react";
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
 const CategoryLIST = [
@@ -125,7 +126,10 @@ const CategoryLIST = [
 
 const Item = ({ slug, name }) => {
   return (
-    <TouchableOpacity className="flex items-center me-3" onPress={() => {}}>
+    <TouchableOpacity
+      className="flex items-center me-3"
+      onPress={() => router.push(`/(store)/category/${slug}`)}
+    >
       <View
         className={`mr-3 flex items-center justify-center border-2   h-20 w-20 rounded-full border-blue-400 `}
       >
