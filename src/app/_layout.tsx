@@ -7,11 +7,9 @@ import { AuthProvider } from "@/context/AuthContext";
 export default function RootLayout() {
   return (
     <SafeAreaProvider>
-      <AuthProvider>
-        <SafeAreaView className="flex-1">
-          <Slot />
-        </SafeAreaView>
-      </AuthProvider>
+      <SafeAreaView className="flex-1">
+        <Slot />
+      </SafeAreaView>
     </SafeAreaProvider>
   );
 }
