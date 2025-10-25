@@ -2,8 +2,10 @@ import React from "react";
 import { Pressable, TextInput, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { router } from "expo-router";
+import { router, useNavigation } from "expo-router";
+import { DrawerActions } from "@react-navigation/native";
 export default function HeaderProduct() {
+  const navigation = useNavigation();
   return (
     <View className="flex-row items-center gap-2 px-3">
       <StatusBar style="dark" animated />
@@ -26,7 +28,7 @@ export default function HeaderProduct() {
       <Pressable
         className="p-2 relative"
         hitSlop={10}
-        onPress={() => router.push("/favorite")}
+        onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
       >
         <Ionicons name="heart-outline" size={22} color="#111827" />
       </Pressable>

@@ -7,9 +7,9 @@ import { AuthProvider } from "@/context/AuthContext";
 export default function RootLayout() {
   return (
     <SafeAreaProvider>
-      <Stack initialRouteName="(store)/index">
+      <Stack initialRouteName="(store)">
         <Stack.Screen
-          name="(store)/index"
+          name="(store)"
           options={{ headerShown: false }}
           // options={{
           //   headerShown: true,
