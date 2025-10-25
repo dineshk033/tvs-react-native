@@ -4,7 +4,7 @@ import { StatusBar } from "expo-status-bar";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { router, useNavigation } from "expo-router";
 import { DrawerActions } from "@react-navigation/native";
-export default function HeaderProduct() {
+export default function HeaderProduct({ onClose }: { onClose: () => void }) {
   const navigation = useNavigation();
   return (
     <View className="flex-row items-center gap-2 px-3">
@@ -33,6 +33,13 @@ export default function HeaderProduct() {
         <Ionicons name="heart-outline" size={22} color="#111827" />
       </Pressable>
       {/**Cart */}
+      <Pressable
+        className="p-2 relative"
+        hitSlop={10}
+        onPress={() => onClose()}
+      >
+        <Ionicons name="caret-back-circle" size={22} color="#111827" />
+      </Pressable>
       <Pressable
         className="p-2 relative"
         hitSlop={10}

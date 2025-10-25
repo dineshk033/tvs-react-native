@@ -17,20 +17,14 @@ export default function HomeProduct() {
 
   return (
     <SafeAreaView className="flex-1 bg-blue-50">
-      <HeaderProduct />
-      <Pressable
-        className="p-2 relative"
-        hitSlop={10}
-        onPress={() => setShowModal(true)}
-      >
-        <Ionicons name="cart-outline" size={22} color="#111827" />
-      </Pressable>
+      <HeaderProduct onClose={() => setShowModal(true)} />
+
       <CartModal visible={showModal} onClose={() => setShowModal(false)} />
       <ScrollView>
         <SectionHeader
           title="Category"
           subtitle="More Category"
-          href="/(store)/category"
+          href="/(auth)/login"
         />
         <TopCategory />
         <SectionHeader

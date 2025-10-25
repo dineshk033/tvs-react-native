@@ -29,7 +29,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           email: email,
           name: email.split("@")[0],
         });
-        router.push("/");
+        router.push("/(store)");
       } else {
         throw new Error("Invalid credentials");
       }
