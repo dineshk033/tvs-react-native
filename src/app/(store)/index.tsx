@@ -1,5 +1,6 @@
 import CartModal from "@/components/CartModal";
 import TopCategory from "@/components/CategoryList";
+import EmbeddedView from "@/components/EmbeddedView";
 import Footer from "@/components/Footer";
 import HeaderProduct from "@/components/HeaderProduct";
 import HorizontalList from "@/components/HorizontalList";
@@ -18,7 +19,7 @@ export default function HomeProduct() {
   return (
     <SafeAreaView className="flex-1 bg-blue-50">
       <HeaderProduct onClose={() => setShowModal(true)} />
-
+      {/* <EmbeddedView url="https://www.google.com/" /> */}
       <CartModal visible={showModal} onClose={() => setShowModal(false)} />
       <ScrollView>
         <SectionHeader
@@ -27,11 +28,7 @@ export default function HomeProduct() {
           href="/(auth)/login"
         />
         <TopCategory />
-        <SectionHeader
-          title="Flash Sale"
-          subtitle="See More"
-          href="/(store)/category"
-        />
+        <SectionHeader title="Flash Sale" subtitle="See More" href="/profile" />
         <HorizontalList items={MOCKPRODUCTS} />
         <SectionHeader
           title="Trending Product"

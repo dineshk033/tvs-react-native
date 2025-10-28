@@ -1,5 +1,6 @@
 export interface ProductModel {
   id: number;
+  qty?: number;
   title: string;
   description: string;
   category: string;
